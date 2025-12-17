@@ -1,0 +1,76 @@
+# PrimeWave Repository Audit
+
+## Repository tree
+```
+      arith_universe_heatmap.png  (1MB)
+      arithmetic_universe.py  (8KB)
+      au_results.csv  (7KB)
+      au_scaling.csv  (775B)
+      audit_primewave.py  (8KB)
+[DIR] figs_big
+      figs_big\prime_rate_vs_E_N10000000_P149_1e7.png  (79KB)
+      figs_big\prime_rate_vs_E_N1000000_P149_1e6.png  (74KB)
+      figs_big\prime_rate_vs_E_N2000000_P149_2e6.png  (72KB)
+      figs_big\prime_rate_vs_E_N5000000_P149_5e6.png  (81KB)
+      figs_big\prime_rate_vs_E_N641601_P149_801^2.png  (75KB)
+[DIR] figs_P
+      figs_P\prime_rate_vs_E_N160801_P149_P149.png  (79KB)
+      figs_P\prime_rate_vs_E_N160801_P199_P199.png  (75KB)
+      figs_P\prime_rate_vs_E_N160801_P251_P251.png  (75KB)
+      figs_P\prime_rate_vs_E_N160801_P97_P97.png  (78KB)
+[DIR] figs_scaling
+      figs_scaling\prime_rate_vs_E_N160801_P149.png  (78KB)
+      figs_scaling\prime_rate_vs_E_N361201_P149.png  (80KB)
+      figs_scaling\prime_rate_vs_E_N641601_P149.png  (74KB)
+      figs_scaling\score_bins_4012.png  (43KB)
+      prime_interference_test.py  (2KB)
+[DIR] results
+      results\prime_candidates_4012.csv  (125KB)
+      results\prime_candidates_8012.csv  (313KB)
+[DIR] src
+      src\au_experiments.py  (17KB)
+      src\au_fit_theory.py  (6KB)
+      src\au_heuristic.py  (7KB)
+      src\au_phase.py  (1KB)
+      src\au_plot_scaling.py  (1KB)
+      src\au_pretentious.py  (4KB)
+      src\ulam_heatmap.py  (6KB)
+      ulam_heatmap.png  (1MB)
+```
+## Compile (syntax) check
+- compileall: OK
+## Module imports & dependencies
+- arithmetic_universe.py  | external: ['matplotlib', 'numpy']
+- prime_interference_test.py  | external: ['matplotlib', 'numpy']
+- src\au_experiments.py  | external: ['au_phase', 'matplotlib', 'numpy']
+- src\au_fit_theory.py  | external: ['au_experiments', 'matplotlib', 'numpy']
+- src\au_heuristic.py  | external: ['au_experiments', 'numpy']
+- src\au_phase.py  | external: ['au_experiments', 'numpy']
+- src\au_plot_scaling.py  | external: ['au_experiments', 'matplotlib', 'numpy']
+- src\au_pretentious.py  | external: ['cmath', 'numpy']
+- src\ulam_heatmap.py  | external: ['matplotlib', 'numpy']
+
+### Suggested requirements.txt
+```
+au_experiments
+au_phase
+cmath
+matplotlib
+numpy
+```
+## Import tests & API presence
+- import au_experiments: **FAILED**  ModuleNotFoundError: No module named 'au_experiments'
+- import au_fit_theory: **FAILED**  ModuleNotFoundError: No module named 'au_fit_theory'
+- import au_phase: **FAILED**  ModuleNotFoundError: No module named 'au_phase'
+- import au_pretentious: **FAILED**  ModuleNotFoundError: No module named 'au_pretentious'
+- import au_heuristic: **FAILED**  ModuleNotFoundError: No module named 'au_heuristic'
+- import au_plot_scaling: **FAILED**  ModuleNotFoundError: No module named 'au_plot_scaling'
+- import ulam_heatmap: **FAILED**  ModuleNotFoundError: No module named 'ulam_heatmap'
+- import arithmetic_universe_heatmap: **FAILED**  ModuleNotFoundError: No module named 'arithmetic_universe_heatmap'
+## Smoke tests (very small N to keep fast)
+- Smoke imports FAILED: No module named 'au_experiments'
+
+- Overall smoke result: Some errors
+## Likely-unused scripts
+- arithmetic_universe.py
+- prime_interference_test.py
